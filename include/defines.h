@@ -1,0 +1,35 @@
+#pragma once
+
+#include "stm32l4xx_hal.h"
+
+#define EW_GREEN GPIO_PIN_5
+#define EW_YELLOW GPIO_PIN_6
+#define EW_RED GPIO_PIN_7
+#define NS_YELLOW GPIO_PIN_8
+#define NS_GREEN GPIO_PIN_9
+#define NS_RED GPIO_PIN_10
+
+#define E_SENSOR_1 GPIO_PIN_5
+#define E_SENSOR_2 GPIO_PIN_6
+#define W_SENSOR_1 GPIO_PIN_7
+#define W_SENSOR_2 GPIO_PIN_10
+#define N_SENSOR_1 GPIO_PIN_11
+#define N_SENSOR_2 GPIO_PIN_12
+#define S_SENSOR_1 GPIO_PIN_13
+#define S_SENSOR_2 GPIO_PIN_14
+
+#define UART_RX GPIO_PIN_2
+#define UART_TX GPIO_PIN_3
+
+#define GREEN_DURATION_MS 60000
+#define YELLOW_RED_DURATION_MS 5000
+
+typedef enum states
+{
+  STATE_ALL_RED_1,
+  STATE_EW_GREEN,
+  STATE_EW_YELLOW,
+  STATE_ALL_RED_2,
+  STATE_NS_GREEN,
+  STATE_NS_YELLOW
+} states_t;
