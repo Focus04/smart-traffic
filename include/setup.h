@@ -1,7 +1,9 @@
 #pragma once
 
+void SystemClock_Config();
 void GPIO_Init();
 void UART2_Init();
+void I2C_Init();
 
 void SysTick_Handler();
 
