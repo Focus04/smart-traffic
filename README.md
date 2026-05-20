@@ -116,29 +116,15 @@ Escalation to the 90 s tier only occurs if high traffic on that specific axis is
 
 ## Notes on the Current Implementation
 
-- The academic requirements mention the possibility of 4 distinct phases (one for each individual direction). The current implementation utilizes **2 main green phases** (one for the EW axis and one for the NS axis), which is well-suited for a standard intersection with synchronized opposing flows.
+- The current implementation utilizes **2 main green phases** (one for the EW axis and one for the NS axis), which is well-suited for a standard intersection with synchronized opposing flows.
 - Vehicle counting is based on passage detection rather than continuous queue length estimation.
 - Average wait times and extended historical statistics are not yet calculated separately, though the core framework for UART logging is already fully established.
 
-## Recommended Testing
-
-To validate the system, the following test scenarios are recommended:
-
-1. **Heavy EW Traffic** - verify that the EW green duration increases to 75 s and subsequently to 90 s.
-2. **Heavy NS Traffic** - verify identical, symmetrical behavior for the NS axis.
-3. **Balanced Traffic** - verify that the system successfully scales back down to the baseline 60 s / 60 s distribution.
-4. **Sparse/Intermittent Traffic** - confirm that the system does not aggressively shift timing tiers due to minor fluctuations.
-5. **Safety Interlock** - confirm that EW and NS never receive a green light simultaneously, neither during standard transitions nor during simulated logic errors.
-
 ## Software Requirements and Compilation
 
-The codebase is written in C and utilizes the **STM32 HAL** library tailored for the STM32L4 family. The project is designed for seamless integration into **STM32CubeIDE** or an equivalent environment that provides:
+The codebase is written in C and utilizes the **STM32 HAL** library tailored for the STM32L4 family. The project is designed for seamless integration into **PLatform.io VS Code Extension**.
 
-- Startup code for the STM32L476RG microchip
-- CMSIS and HAL source files for the STM32L4 series
-- Proper Linker Script (`.ld`) and interrupt vector configurations
-
-In its current state, this repository contains the core application logic; auto-generated configuration files from CubeIDE are excluded.
+In its current state, this repository contains the core application logic; the STM32 HAL Library is excluded.
 
 ## Possible Improvements
 
