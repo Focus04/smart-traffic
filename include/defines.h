@@ -24,8 +24,8 @@
 #define I2C_SCL GPIO_PIN_8
 #define I2C_SDA GPIO_PIN_9
 
-#define GREEN_DURATION_MS 60000
-#define YELLOW_RED_DURATION_MS 5000
+#define BASE_GREEN_DURATION_MS 60000
+#define BASE_YELLOW_RED_DURATION_MS 5000
 
 typedef enum states
 {
@@ -36,3 +36,12 @@ typedef enum states
   STATE_NS_GREEN,
   STATE_NS_YELLOW
 } states_t;
+
+typedef enum
+{
+  TIER_0_BASE,
+  TIER_1_EW_75,
+  TIER_2_EW_90,
+  TIER_1_NS_75,
+  TIER_2_NS_90
+} traffic_tier_t;
