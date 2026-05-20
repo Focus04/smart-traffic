@@ -90,24 +90,24 @@ void Update_Traffic_Lights()
   switch (current_tier)
   {
   case TIER_0_BASE:
-    green_duration_ew = 60000;
-    green_duration_ns = 60000;
+    green_duration_ew = BASE_GREEN_DURATION_MS;
+    green_duration_ns = BASE_GREEN_DURATION_MS;
     break;
   case TIER_1_EW_75:
-    green_duration_ew = 75000;
-    green_duration_ns = 45000;
+    green_duration_ew = TIER_1_GREEN_DURATION_MS;
+    green_duration_ns = BASE_GREEN_DURATION_MS * 2 - TIER_1_GREEN_DURATION_MS;
     break;
   case TIER_2_EW_90:
-    green_duration_ew = 90000;
-    green_duration_ns = 30000;
+    green_duration_ew = TIER_2_GREEN_DURATION_MS;
+    green_duration_ns = BASE_GREEN_DURATION_MS * 2 - TIER_2_GREEN_DURATION_MS;
     break;
   case TIER_1_NS_75:
-    green_duration_ew = 45000;
-    green_duration_ns = 75000;
+    green_duration_ew = BASE_GREEN_DURATION_MS * 2 - TIER_1_GREEN_DURATION_MS;
+    green_duration_ns = TIER_1_GREEN_DURATION_MS;
     break;
   case TIER_2_NS_90:
-    green_duration_ew = 30000;
-    green_duration_ns = 90000;
+    green_duration_ew = BASE_GREEN_DURATION_MS * 2 - TIER_2_GREEN_DURATION_MS;
+    green_duration_ns = TIER_2_GREEN_DURATION_MS;
     break;
   }
 
@@ -239,8 +239,8 @@ int main()
       snprintf(buf, sizeof(buf), "EW: %02lu   ||   NS: %02lu", EW_traffic_cnt, NS_traffic_cnt);
       LCD_PrintLine(3, buf);
 
-      printf("\rTime remaining -> EW:%02lus NS:%02lus || Cars Count -> EW:%02lu NS:%02lu",
-        ew_seconds_remaining, ns_seconds_remaining, EW_traffic_cnt, NS_traffic_cnt);
+      printf("\rTime remaining -> EW:%02lus NS:%02lus || Cars Count -> EW:%02lu NS:%02lu        ",
+             ew_seconds_remaining, ns_seconds_remaining, EW_traffic_cnt, NS_traffic_cnt);
       fflush(stdout);
     }
   }
