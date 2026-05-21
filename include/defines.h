@@ -29,6 +29,8 @@
 #define TIER_2_GREEN_DURATION_MS 90000
 #define BASE_YELLOW_RED_DURATION_MS 5000
 
+#define CARS_COUNT_TH 5
+
 typedef enum states
 {
   STATE_ALL_RED_1,

@@ -35,7 +35,7 @@ void Update_Traffic_Lights()
 {
   int32_t delta = (int32_t)EW_traffic_cnt - (int32_t)NS_traffic_cnt;
 
-  if (delta > 5)
+  if (delta > CARS_COUNT_TH)
   {
     consecutive_ns_high_traffic = 0;
     if (current_tier == TIER_0_BASE)
@@ -54,7 +54,7 @@ void Update_Traffic_Lights()
     else if (current_tier == TIER_1_NS_75)
       current_tier = TIER_0_BASE;
   }
-  else if (delta < -5)
+  else if (delta < -CARS_COUNT_TH)
   {
     consecutive_ew_high_traffic = 0;
     if (current_tier == TIER_0_BASE)
