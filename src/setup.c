@@ -140,7 +140,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
   if (GPIO_Pin == E_SENSOR_1 || GPIO_Pin == E_SENSOR_2 || GPIO_Pin == W_SENSOR_1 || GPIO_Pin == W_SENSOR_2)
   {
-    if (current_time - last_ew_tick > 250)
+    if (current_time - last_ew_tick > SENSOR_DEBOUNCE_MS)
     {
       EW_traffic_cnt++;
       last_ew_tick = current_time;
@@ -148,7 +148,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   }
   else if (GPIO_Pin == N_SENSOR_1 || GPIO_Pin == N_SENSOR_2 || GPIO_Pin == S_SENSOR_1 || GPIO_Pin == S_SENSOR_2)
   {
-    if (current_time - last_ns_tick > 250)
+    if (current_time - last_ns_tick > SENSOR_DEBOUNCE_MS)
     {
       NS_traffic_cnt++;
       last_ns_tick = current_time;
