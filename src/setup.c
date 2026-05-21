@@ -25,9 +25,7 @@ void SystemClock_Config()
   RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
   RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-    while (1)
-    {
-    };
+    while (1) {}
 
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
@@ -35,9 +33,7 @@ void SystemClock_Config()
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
-    while (1)
-    {
-    }
+    while (1) {}
 }
 
 void GPIO_Init()
@@ -208,9 +204,7 @@ void LCD_Init()
 
 void LCD_PrintLine(uint8_t row, const char *str)
 {
-  uint8_t addr = (row == 0) ? 0x00 : (row == 1) ? 0x40
-                                 : (row == 2)   ? 0x14
-                                                : 0x54;
+  uint8_t addr = (row == 0) ? 0x00 : (row == 1) ? 0x40 : (row == 2) ? 0x14 : 0x54;
 
   LCD_SendByte(0x80 | addr, 0);
 
