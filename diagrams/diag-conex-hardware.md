@@ -1,3 +1,5 @@
+## Hardware Diagram
+```
 graph TD
     %% Definire stiluri pentru claritate
     classDef mcu fill:#f9f,stroke:#333,stroke-width:2px,color:black;
@@ -40,3 +42,4 @@ graph TD
     PORTA ==> LEDs
     PORTB ==> LCD
     PORTA <==> PC
+```
