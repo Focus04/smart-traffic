@@ -1,3 +1,4 @@
+## FSM State Diagram
 ```mermaid
 stateDiagram-v2
     %% Definire culori pentru stări
