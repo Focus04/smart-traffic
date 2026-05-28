@@ -1,5 +1,5 @@
 ## Hardware Diagram
-```
+```mermaid
 graph TD
     %% Definire stiluri pentru claritate
     classDef mcu fill:#f9f,stroke:#333,stroke-width:2px,color:black;
