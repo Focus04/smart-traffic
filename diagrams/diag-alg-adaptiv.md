@@ -13,7 +13,9 @@ flowchart TD
         Debounce -- Nu --> ClearFlag
         IncCounter --> ClearFlag
     end
-
+```
+```mermaid
+flowchart TD
     %% Bucla Principală (Sincronă)
     subgraph Main_Loop ["Bucla Principala (main.c)"]
         FSM_Run["Rulare FSM Semafor"]
