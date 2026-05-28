@@ -1,3 +1,5 @@
+## Algorithm Logic Diagram
+```mermaid
 flowchart TD
     %% Noduri Întreruperi (Asincrone)
     subgraph IR_Interrupts ["Tratare Intreruperi Hardware (EXTI)"]
@@ -41,3 +43,4 @@ flowchart TD
     %% Stiluri
     classDef interrupt fill:#f96,stroke:#333,stroke-width:2px,color:white;
     class PB5_14,Debounce,IncCounter,ClearFlag interrupt;
+```
