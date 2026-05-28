@@ -1,3 +1,4 @@
+```mermaid
 stateDiagram-v2
     %% Definire culori pentru stări
     classDef green fill:#8f8,stroke:#333,stroke-width:1px;
@@ -46,3 +47,4 @@ stateDiagram-v2
     Check_Interlock --> ERROR : [Conflicting Greens Detected]
     Check_Interlock --> STATE_EW_YELLOW : [Safe]
     Check_Interlock --> STATE_NS_YELLOW : [Safe]
+```
