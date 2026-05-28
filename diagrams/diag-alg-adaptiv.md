@@ -13,6 +13,8 @@ flowchart TD
         Debounce -- Nu --> ClearFlag
         IncCounter --> ClearFlag
     end
+    classDef interrupt fill:#f96,stroke:#333,stroke-width:2px,color:white;
+    class PB5_14,Debounce,IncCounter,ClearFlag interrupt;
 ```
 ```mermaid
 flowchart TD
@@ -41,8 +43,6 @@ flowchart TD
         ApplyTimes --> ResetCnt
         ResetCnt --> FSM_Run
     end
-
-    %% Stiluri
     classDef interrupt fill:#f96,stroke:#333,stroke-width:2px,color:white;
     class PB5_14,Debounce,IncCounter,ClearFlag interrupt;
 ```
